@@ -106,7 +106,6 @@
   section.view{display:none;}
   section.view.active{display:block;}
 
-  /* ---- Study guide ---- */
   .guide-search{
     width:100%;padding:14px 16px;
     border:2px solid var(--ink);border-radius:8px;
@@ -133,7 +132,7 @@
   details.topic summary .count{
     font-family:var(--mono);font-weight:400;font-size:.78rem;
     color:#6b7280;flex-shrink:0; 
-    margin-left:auto; /* 靠右對齊 */
+    margin-left:auto;
     margin-right:12px;
   }
   details.topic summary::after{
@@ -152,7 +151,6 @@
     font-weight:700;
   }
 
-  /* ---- Quiz setup ---- */
   .setup-card{
     background:var(--card);border:1px solid var(--line);border-radius:10px;
     padding:26px;margin-bottom:24px;
@@ -189,7 +187,6 @@
   .start-btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink);}
   .start-btn:disabled{background:#999;cursor:not-allowed;box-shadow:none;}
 
-  /* ---- Quiz play ---- */
   #quizPlay{display:none;}
   .quiz-topbar{
     display:flex;justify-content:space-between;align-items:center;
@@ -240,7 +237,6 @@
   }
   .nav-btn.secondary:hover:not(:disabled){ background:#c9b8a8; }
   
-  /* timer animation */
   @keyframes pulse {
       0% { opacity: 1; }
       50% { opacity: 0.5; }
@@ -251,7 +247,6 @@
       animation: pulse 1s infinite;
   }
 
-  /* ---- Results ---- */
   #quizResult{display:none;text-align:center;padding:40px 20px;}
   #quizResult .score{font-family:var(--serif);font-size:3.2rem;font-weight:800;color:var(--steel);}
   #quizResult .score span{font-size:1.6rem;color:#8a8370;}
@@ -265,7 +260,6 @@
   .review-item.hit{border-left:5px solid var(--safe);}
   .review-item p{margin:4px 0;font-size:.92rem;}
 
-  /* ---- Wrong-answer bank ---- */
   .tab-btn{position:relative;}
   .tab-badge{
     position:absolute;top:-8px;right:-8px;
@@ -296,7 +290,7 @@
   .bank-actions .practice-btn:hover{transform:translate(-1px,-1px);}
   .bank-actions .clear-btn{
     font-family:var(--sans);font-weight:700;background:transparent;color:#8a2e1c;
-    border:1.5px solid #c9b8a8;border-radius:8px;padding:13px 20px;cursor:pointer;font-size:.9rem;
+    border:1.5px solid #c9b8a8;border-radius:8px;padding:13px 24px;cursor:pointer;font-size:.9rem;
   }
   .bank-topic-bars{margin-bottom:22px;}
   .bank-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:.85rem;}
@@ -318,6 +312,7 @@
   .bank-item-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;}
   .bank-item .bq{font-weight:700;margin:2px 0 8px;}
   .bank-item .meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:.78rem;color:#8a8370;font-family:var(--mono);}
+  
   .streak-dots{display:inline-flex;gap:3px;}
   .streak-dots i{width:9px;height:9px;border-radius:50%;background:var(--line);display:inline-block;}
   .streak-dots i.on{background:var(--safe);}
@@ -341,7 +336,6 @@
     font-size:.68rem;padding:2px 8px;border-radius:5px;margin-left:8px;vertical-align:middle;
   }
 
-  /* ---- Custom Modal ---- */
   .modal-overlay{
     position:fixed; inset:0; background:rgba(18, 24, 31, 0.65);
     display:none; align-items:center; justify-content:center;
@@ -379,7 +373,7 @@
   <div class="hero-inner">
     <span class="eyebrow">● 甲種職業安全衛生業務主管 · 學習教材</span>
     <h1>安全衛生複習講義<br>與模擬測驗</h1>
-    <p class="lead">依主題整理法規重點與題庫，並可自選範圍隨機抽題進行模擬測驗，即時對答案、看解析。全部資料存於本頁，離線也能使用。</p>
+    <p class="lead">依據最新修訂法規與 17 大單元整理重點題庫。可自選範圍隨機抽題進行模擬測驗，即時對答案、看解析。全部資料存於本頁，離線也能使用。</p>
     <div class="hero-stats">
       <div><span class="n" id="statTopics">17</span><span class="l">主題分類</span></div>
       <div><span class="n" id="statQs">--</span><span class="l">題庫題數</span></div>
@@ -400,7 +394,7 @@
 
   <!-- ============ GUIDE VIEW ============ -->
   <section id="guideView" class="view active">
-    <input class="guide-search" id="guideSearch" type="text" placeholder="搜尋關鍵字（例如：噪音、90分貝、承攬）...">
+    <input class="guide-search" id="guideSearch" type="text" placeholder="搜尋關鍵字（例如：噪音、115年、承攬）...">
     <div id="guideList"></div>
   </section>
 
@@ -489,7 +483,6 @@
     <div class="setup-card">
       <h2 style="margin-bottom: 24px;">歷史成績統計</h2>
       
-      <!-- 小精靈對話框 -->
       <div id="fairyMessage" style="display:none; background:#f0fdf4; border:2px solid #22c55e; border-radius:12px; padding:16px; margin-bottom:24px; align-items:center; gap:16px;">
         <div style="font-size:3rem; line-height:1;">🧚‍♀️</div>
         <div>
@@ -520,7 +513,7 @@
     <h3 id="modalTitle">確認操作</h3>
     <p id="modalText">確定要執行此操作嗎？</p>
     <div class="modal-actions">
-      <button class="modal-btn cancel" id="modalCancelBtn">取消</button>
+      <button class="modal-btn cancel" id="modalCancelBtn" style="display:none;">取消</button>
       <button class="modal-btn confirm" id="modalConfirmBtn">確定</button>
     </div>
   </div>
@@ -562,7 +555,7 @@ const TOPICS = [
 ========================================================= */
 const RAW_QUESTIONS = [
   // 1. comm (企業風險、溝通協調、工作倫理與道德)
-  {topic:"comm", q:"達成失能傷害平均在0.13以下，是職業安全衛生管理計畫中哪一項？", opts:["基本方針","實施細目","計畫目標","預定進度"], a:2, note:"量化目標屬於計畫目標。"},
+  {topic:"comm", q:"達成失能傷害平均在0.13以下，是職業安全衛生管理計畫中哪一項？", opts:["基本方針","實施細目","計畫目標","預定進度"], a:2, note:"量化指標屬於計畫目標。"},
   {topic:"comm", q:"下列何者非意外災害發生的基本原因？", opts:["未提供安全設備","承攬商管理不良","安全衛生管理不善","危害確認不足"], a:0, note:"未提供安全設備屬不安全環境（間接原因）。"},
   {topic:"comm", q:"事業單位擴充產能時，下列何項較不可能引起意外災害？", opts:["新進人員訓練不足所致之危害","有害物增加逸散之危害","製品堆置場所不足所致之危害","工時縮短所致之危害"], a:3},
   {topic:"comm", q:"下列何者非意外災害發生的間接原因？", opts:["未依標準作業程序操作","安全衛生管理不善","未提供安全設備","未提供安全護具"], a:1, note:"管理不善為基本原因。"},
@@ -591,6 +584,7 @@ const RAW_QUESTIONS = [
   {topic:"comm", q:"公司負責人為了節省開銷，將員工薪資以多報少投保健保及勞保，觸犯刑法何種罪？", opts:["詐欺罪","侵占罪","背信罪","偽造文書罪"], a:0},
   {topic:"comm", q:"貪污治罪條例所稱之「賄賂或不正利益」與廉政倫理規範之最大差異在於何者之有無？", opts:["利害關係","補助關係","隸屬關係","對價關係"], a:3},
   {topic:"comm", q:"公務員廉政倫理規範中，非主動求取且偶發收受之廣告物促銷品紀念品，價值在新臺幣多少元以下視為正常禮貌？", opts:["500元","1,000元","2,000元","3,000元"], a:0},
+  {topic:"comm", q:"依性騷擾防治法規定，意圖性騷擾，乘人不及抗拒而為親吻、擁抱或觸摸其隱私處之行為者，處多少年以下有期徒刑？", opts:["半年","1年","2年","3年"], a:2},
 
   // 2. law (法規)
   {topic:"law", q:"依職業安全衛生管理辦法規定，職業安全衛生委員會應置委員幾人以上？", opts:["4人","5人","6人","7人"], a:3},
@@ -616,6 +610,8 @@ const RAW_QUESTIONS = [
   {topic:"law", q:"依勞動基準法規定，女工分娩前後，雇主應給予產假幾星期？", opts:["6星期","8星期","10星期","12星期"], a:1},
   {topic:"law", q:"依勞動檢查法規定，經勞檢機構書面通知之檢查結果，事業單位應於違規場所公告幾日以上？", opts:["5日","7日","10日","14日"], a:1},
   {topic:"law", q:"依職業安全衛生管理辦法規定，第一類事業單位勞工人數在幾人以上者，應設直接隸屬雇主之專責一級管理單位？", opts:["30人","50人","100人","200人"], a:2},
+  {topic:"law", q:"依職業安全衛生法規定，事業單位勞工人數在多少人以上，應僱用或特約醫護人員，辦理健康管理、職業病預防等健康保護事項？", opts:["30人","50人","100人","300人"], a:1},
+  {topic:"law", q:"工作場所有立即發生危險之虞時，應由誰下令停止作業，並使勞工退避至安全場所？", opts:["檢查機構","勞動部","雇主或工作場所負責人","部門主管"], a:2},
 
   // 3. intro (概論 / 5S / 危害分類)
   {topic:"intro", q:"零災害運動的3大原則，通常不包括下列何者？", opts:["要求完美","以零為目標","先知先制","全員參加"], a:0},
@@ -633,6 +629,7 @@ const RAW_QUESTIONS = [
   {topic:"intro", q:"將要與不要的物品加以區分，不要的加以清除，是指5S中之哪一項？", opts:["整理","整頓","清掃","清潔"], a:0},
   {topic:"intro", q:"有害物經由下列何途徑進入人體，造成危害最多？", opts:["食入","皮膚接觸","呼吸道吸入","眼睛接觸"], a:2},
   {topic:"intro", q:"人體中氧氣消耗量最大之器官為下列何者？", opts:["肝臟","腎臟","腦","胃"], a:2},
+  {topic:"intro", q:"發生墜落、感電及崩塌死亡職業災害發生最多的行業是？", opts:["製造業","服務業","營造業","醫療業"], a:2},
 
   // 4. sys (TOSHMS / ISO 45001)
   {topic:"sys", q:"職業安全衛生管理系統之主要架構運作，職業安全衛生活動的最高指導原則為下列何者？", opts:["職業安全衛生計畫","職業安全衛生政策","職業安全衛生方針","職業安全衛生方案"], a:1},
@@ -642,10 +639,11 @@ const RAW_QUESTIONS = [
   {topic:"sys", q:"有關臺灣職業安全衛生管理系統的特色，下列何者有誤？", opts:["政府並未強制事業單位通過驗證","由300人以上高風險事業單位優先推動","內容與OHSAS18001完全一致","可與ISO9001、ISO14001相容"], a:2},
   {topic:"sys", q:"下列何者為臺灣職業安全衛生管理系統之簡稱？", opts:["OHSAS18001","VPP","TS","TOSHMS"], a:3},
   {topic:"sys", q:"下列何者為國際勞工組織(ILO)在2001年所頒布的職業安全衛生管理系統指引？", opts:["ILO-HSE","ILO-OHSAS","ILO-OSH","ISO-OSH"], a:2},
-  {topic:"sys", q:"有關臺灣職業安全衛生管理系統指引中之「危害」定義，係指下列何者？", opts:["危及公共安全的潛在原因","可能造成工安事故的原因","對人體健康造成傷害或損害的潛在因素","危險性及有害性的簡稱"], a:2},
+  {topic:"sys", q:"有關臺灣職業安全衛生管理系統指引中之「危害」定義，係指下列何者？", opts:["危及公共安全的潛在原因","可能造成工工安事故的原因","對人體健康造成傷害或損害的潛在因素","危險性及有害性的簡稱"], a:2},
   {topic:"sys", q:"依法令規定，第一類事業單位勞工人數在多少人以上，應參照指引建立職業安全衛生管理系統？", opts:["100人","200人","300人","500人"], a:1},
   {topic:"sys", q:"為執行職業安全衛生管理系統的績效監督與量測，被動指標通常會選用下列何者？", opts:["教育訓練人數","安全提案件數","職業傷病統計資料","機械設備自動檢查次數"], a:2},
   {topic:"sys", q:"針對職業安全衛生管理系統稽核所發現不符合事項，應採取何種措施？", opts:["矯正措施","鑑別措施","防護措施","控制措施"], a:0},
+  {topic:"sys", q:"ISO 45001 相較於 OHSAS-18001，除導入高階管理架構外，在採購管理包括：原物料採購、承攬商，尚有？", opts:["外包","變更","稽核","系統運作"], a:0},
 
   // 5. risk (風險評估)
   {topic:"risk", q:"風險評估的基本方法以簡單公式描述為下列何者？", opts:["風險×暴露=危害","風險×危害=評估","危害×暴露=風險","危害×風險=暴露"], a:2},
@@ -659,6 +657,8 @@ const RAW_QUESTIONS = [
   {topic:"risk", q:"考量降低風險的控制措施時，下列順序何者正確？A.工程控制 B.管理控制 C.消除 D.取代", opts:["ABCD","CDAB","DCBA","ACDB"], a:1},
   {topic:"risk", q:"我國製程安全評估制度目前屬於下列何者？", opts:["事業單位製程之檢查範圍","危險性工作場所審查及檢查事項","每家工廠之驗證事項","ISO14000之認證事項"], a:1},
   {topic:"risk", q:"風險評估的嚴重度判斷時，骨折住院3天，屬於下列何種傷害程度？", opts:["重度傷害","虛驚事故","中度傷害","輕傷害"], a:2},
+  {topic:"risk", q:"針對工作場所內可能造成之各種重大災害，以演繹法推導出造成失誤之各個因子之方法，屬於下列何者？", opts:["檢核表 (Checklist)","如果-結果分析 (What-if)","危害與可操作分析 (HazOp)","故障樹分析 (FTA)"], a:3},
+  {topic:"risk", q:"實施工作安全分析(JSA)時，分析者一般由何人擔任較適合？", opts:["生產部門最高主管","安全衛生管理人員","具實務工作經驗之領班","工會代表"], a:2},
 
   // 6. contract (承攬管理)
   {topic:"contract", q:"依職業安全衛生法規定，二個以上之事業單位分別出資共同承攬時，防止職業災害之雇主責任應由誰負責？", opts:["出資較多的事業單位","二事業單位一起負責","勞工人數較多的事業單位","此二事業單位互推一人為代表人"], a:3},
@@ -667,7 +667,7 @@ const RAW_QUESTIONS = [
   {topic:"contract", q:"事業單位分別交付兩個以上承攬人共同作業而未參與共同作業時，下列敘述何者正確？", opts:["仍應由原負責事業單位之承攬管理責任","應由承攬人負原事業之承攬管理責任","應指定承攬人之一負原事業單位之承攬責任","由承攬人抽籤決定"], a:2},
   {topic:"contract", q:"有關危害告知事項，下列何者正確？", opts:["可以口頭方式告知","得以承攬人勞工之安全承諾書替代危害告知","承攬人再承攬時無須告知再承攬人","得以書面或召開協商會議並作成紀錄為之"], a:3},
   {topic:"contract", q:"依職業安全衛生法規定，事業單位以其事業交付承攬時，原事業單位仍應就下列何者與承攬人負連帶責任？", opts:["刑事處分","職業災害補償","職業災害補助","工時損失"], a:1},
-  {topic:"contract", q:"甲公司將其事業交付乙公司承攬，並提供移動式起重機供乙公司使用，該起重機應由何者實施自動檢查？", opts:["甲、乙公司推派代表","委託代檢機構","乙公司","甲公司"], a:3},
+  {topic:"contract", q:"甲公司將其事業交由乙公司承攬，並提供移動式起重機供乙公司使用，該起重機應由何者實施自動檢查？", opts:["甲、乙公司推派代表","委託代檢機構","乙公司","甲公司"], a:3},
   {topic:"contract", q:"事業單位以其事業之全部或一部分交付承攬時，勞工人數之計算，下列何者正確？", opts:["僅以該事業單位之勞工人數計算","以原事業單位、承攬人、再承攬人分別僱用勞工人數中取最多者","以原事業單位、承攬人、再承攬人同一期間同一工作場所作業時之總人數計算","以承攬人勞工人數計算"], a:2},
 
   // 7. procure (採購與變更管理)
@@ -677,6 +677,7 @@ const RAW_QUESTIONS = [
   {topic:"procure", q:"變更管理之所謂變更，通常不含下列何者？", opts:["設備變更","商標變更","製程變更","材料變更"], a:1},
   {topic:"procure", q:"依職業安全衛生管理辦法規定，200人以上之第一類事業單位，其採購管理相關紀錄保存期限為？", opts:["至少3年","至少5年","不用保存","至少9年"], a:0},
   {topic:"procure", q:"下列有關職業安全衛生變更管理之敘述，何者正確？", opts:["在修改或引進新作業方法、材料、程序或設備之前，應進行危害鑑別和風險評估","應即時掌握勞檢人員異動狀況以應對檢查","吊掛作業承攬商租用機具額定吊重大於計畫所列者，無須風險評估","作業內容變更時，承攬商可自行評估決定工法"], a:0},
+  {topic:"procure", q:"下列有關施工機具採購之敘述，何者錯誤？", opts:["採購契約中應規定供應商提供機器組裝測試所需之專業能力","得標廠商應自行考量機具設備送抵工地方式，採購規範中無需特別予以規定","隧道開挖等特殊機具應明定試運轉功能驗證測試","採購契約應要求提供機具組裝測試之安全防護設施"], a:1},
 
   // 8. emergency (緊急應變與急救)
   {topic:"emergency", q:"下列何者為燒傷急救口訣？", opts:["沖脫泡蓋送","叫叫壓","拉拉壓","快狠準"], a:0},
@@ -690,6 +691,7 @@ const RAW_QUESTIONS = [
   {topic:"emergency", q:"氧乙炔焊接作業完畢時，其正確關機程序為何？", opts:["兩者一起關","先關氧氣，再關乙炔","先收輸氣管後關氣瓶開關","先關乙炔，再關氧氣"], a:3},
   {topic:"emergency", q:"緊急應變總指揮之工作職責為下列何者？", opts:["代表事業單位對外發佈和說明災變處理情形","負責消防水及緊急電源之正常供應","負責現場搶救工作","掌握各應變編組運作，瞭解災害之發展狀況，授權及督導各組應變"], a:3},
   {topic:"emergency", q:"施行成人心肺復甦術(CPR)，胸外按壓與人工呼吸之比例為？", opts:["15:2","30:2","5:1","10:1"], a:1},
+  {topic:"emergency", q:"進入含氯氣3%室內作業場所，應配戴何種呼吸防護具？", opts:["防塵用呼吸防護具","供氣式呼吸器","有機溶劑防毒面具","酸性氣體防護具"], a:1},
 
   // 9. fall (墜落預防)
   {topic:"fall", q:"依職業安全衛生設施規則規定，雇主對於高度2公尺以上之工作場所，勞工有遭遇墜落危險之虞者，應設置何種設備？", opts:["護欄、護蓋或安全網等","僅需口頭警告","警示帶即可","無須特別設備"], a:0},
@@ -700,6 +702,8 @@ const RAW_QUESTIONS = [
   {topic:"fall", q:"對於背負式安全帶之使用，下列何者不正確？", opts:["安全帶應鉤掛於交叉拉桿上以確保人員安全","搭配使用雙掛鉤之安全掛繩","繫索或安全母索應予保護避免受切斷或磨損","應考量人員作業位置與地面間之淨空間"], a:0},
   {topic:"fall", q:"依職業安全衛生設施規則規定，雇主對於高度2公尺以上未滿5公尺之高處作業，是否可設置合梯做為上下設備？", opts:["可以","不可以","視現場狀況","雇主自行決定即可"], a:1},
   {topic:"fall", q:"依營造安全衛生設施標準規定，安全帶或安全母索繫固之錨錠，至少應能承受每人多少公斤以上之拉力？", opts:["1,200公斤","1,500公斤","2,000公斤","2,300公斤"], a:3},
+  {topic:"fall", q:"依營造安全衛生設施標準規定，護欄的上欄杆高度應在幾公分以上？", opts:["75公分","85公分","90公分","100公分"], a:2},
+  {topic:"fall", q:"高度幾公尺以上之施工架構築、拆除、組配作業，應選任施工架作業主管負責監督指揮施工？", opts:["2公尺","3公尺","4公尺","5公尺"], a:3},
 
   // 10. machine (機械安全)
   {topic:"machine", q:"依機械設備器具安全標準規定，衝壓機械緊急停止裝置之動作用按鈕，應符合下列何者？", opts:["紅色且為凸出型","紅色且為凹入型","綠色且為凹入型","綠色且為凸出型"], a:0},
@@ -714,6 +718,7 @@ const RAW_QUESTIONS = [
   {topic:"machine", q:"設備上裝有雙手啟動之2個按鈕，一般應如何安全操作？", opts:["兩手同時各按1個","可用膠帶固定其中1個","兩手輪流各按1個，先用右手按","兩手輪流各按1個，先用左手按"], a:0},
   {topic:"machine", q:"動力堆高機之載物架，最多可載幾人？", opts:["不可載人","1人","2人","3人"], a:0},
   {topic:"machine", q:"吊掛用鋼索一撚間有百分之多少以上素線截斷者，不得作為起重機具之吊掛用具？", opts:["1%","5%","10%","15%"], a:2},
+  {topic:"machine", q:"依機械設備器具安全防護標準規定，木材加工用圓盤鋸之撐縫片厚度應為圓鋸片厚度之幾倍以上？", opts:["1.0倍","1.1倍","1.2倍","1.3倍"], a:1},
 
   // 11. fire (火災爆炸)
   {topic:"fire", q:"金屬鋰、金屬鈉與金屬鉀等物質之保存方式，下列何者最佳？", opts:["儲存於石油醚中","放置於空氣中","放置於水中","儲存於含水酒精中"], a:0},
@@ -722,10 +727,11 @@ const RAW_QUESTIONS = [
   {topic:"fire", q:"物質的最小著火能量越低，越易引火，下列何者最低？", opts:["氫氣","甲烷","丙烷","乙烯"], a:0},
   {topic:"fire", q:"依職業安全衛生設施規則規定，高壓氣體容器於貯存或搬運時，溫度應保持在攝氏多少度以下？", opts:["30℃","38℃","40℃","50℃"], a:2},
   {topic:"fire", q:"依職業安全衛生設施規則規定，可燃性氣體、有毒性氣體及氧氣之鋼瓶，應如何儲存？", opts:["無需分開","全部分開","僅可燃性氣體及氧氣鋼瓶需分開","僅可燃性氣體及毒性氣體鋼瓶需分開"], a:1},
-  {topic:"fire", q:"紙張所引起之火災，屬於下列何種火災類型？", opts:["A類","B類","C類","D類"], a:0},
+  {topic:"fire", q:"紙張、木料所引起之火災，屬於下列何種火災類型？", opts:["A類","B類","C類","D類"], a:0},
   {topic:"fire", q:"金屬鉀所引起之火災適合用何種滅火劑？", opts:["泡沫","二氧化碳","特種金屬化學乾粉","惰性氣體"], a:2},
   {topic:"fire", q:"電腦機房之電氣設備所引起之火災種類為下列何者？", opts:["A類","B類","C類","D類"], a:2},
   {topic:"fire", q:"常用乾粉滅火器的主要成分為下列何者？", opts:["碳酸氫鈉、碳酸氫鉀","二氧化碳","惰性氣體","鹵化烷"], a:0},
+  {topic:"fire", q:"金屬鉀、鈉引起火災屬於下列何類火災？", opts:["甲(A)類","乙(B)類","丙(C)類","丁(D)類"], a:3},
 
   // 12. electric (感電危害)
   {topic:"electric", q:"若金屬導線外層絕緣損壞，致使兩帶電導體接觸，稱為下列何者？", opts:["短路","漏電","尖端放電","斷路"], a:0},
@@ -739,6 +745,7 @@ const RAW_QUESTIONS = [
   {topic:"electric", q:"一般所謂交流高電壓與低電壓是以多少伏特的電壓為分界點？", opts:["220伏特","380伏特","600伏特","1000伏特"], a:2},
   {topic:"electric", q:"身體在潮濕的狀況下，電阻值之變化為下列何者？", opts:["降低","升高","不變","時高時低"], a:0},
   {topic:"electric", q:"電氣迴路中接地線外圍絕緣皮之顏色為何？", opts:["紅色","綠色","藍色","黑色"], a:1},
+  {topic:"electric", q:"交流電焊機未設置自動電擊防止裝置，致勞工於作業時不慎碰觸感電，其災害之間接原因為何？", opts:["不安全制度","不安全動作","不安全設備","天災"], a:2},
 
   // 13. collapse (倒塌崩塌 / 物體飛落)
   {topic:"collapse", q:"依職業安全衛生法令規定，在石綿板、鐵皮板等材料構築之屋頂從事作業時，防止勞工踏穿墜落，應於屋架上設置適當強度且寬度在多少公分以上之踏板？", opts:["10公分","20公分","30公分","40公分"], a:2},
@@ -748,6 +755,8 @@ const RAW_QUESTIONS = [
   {topic:"collapse", q:"合梯梯角與地面之角度應在多少度以內？", opts:["30度","45度","60度","75度"], a:3},
   {topic:"collapse", q:"依災害類型分類說明表，以飛來物、落下物等為主體碰撞人體之情況，屬於下列何者？", opts:["感電","火災","物體飛落","跌倒"], a:2},
   {topic:"collapse", q:"依營造安全衛生設施標準規定，露天開挖垂直深度超過多少公尺即應設擋土支撐？", opts:["1.0公尺","1.5公尺","2.0公尺","2.5公尺"], a:1},
+  {topic:"collapse", q:"勞工從事露天開挖作業，其垂直開挖最大深度如在多少公尺以上者，應設擋土支撐？", opts:["1.0公尺","1.5公尺","1.8公尺","2.0公尺"], a:1},
+  {topic:"collapse", q:"依營造安全衛生設施標準規定，對於磚、瓦、木塊或同類材料的堆放，其高度不得超過多少公尺？", opts:["1.2公尺","1.5公尺","1.8公尺","2.0公尺"], a:2},
 
   // 14. chem (化學性危害 / 缺氧)
   {topic:"chem", q:"缺氧症預防規則規定，缺氧危險場所係指空氣中氧氣濃度在多少%以下場所？", opts:["14%","16%","18%","20%"], a:2},
@@ -776,6 +785,7 @@ const RAW_QUESTIONS = [
   {topic:"physical", q:"依勞工作業環境監測實施辦法之規定，高溫作業場所應每隔多久測定綜合溫度熱指數一次以上？", opts:["1個月","3個月","6個月","1年"], a:1},
   {topic:"physical", q:"下列何者非屬游離輻射？", opts:["X射線","中子射線","紅外線","α粒子"], a:2},
   {topic:"physical", q:"室外有日曬情形下，綜合溫度熱指數(WBGT)計算公式為？", opts:["0.7WBT + 0.3GBT","0.7WBT + 0.2GBT + 0.1DBT","0.6WBT + 0.2GBT + 0.2DBT","0.7WBT + 0.1GBT + 0.2DBT"], a:1},
+  {topic:"physical", q:"與噪音源(點音源)之距離每增加1倍時，其噪音音壓級衰減多少分貝？", opts:["3分貝","6分貝","9分貝","12分貝"], a:1},
 
   // 16. health (健康管理 / 健康促進)
   {topic:"health", q:"依勞工健康保護規則規定，雇主對於從事特別危害健康作業之在職勞工，應每幾年實施特定項目之特殊健康檢查？", opts:["1年","2年","3年","4年"], a:0},
@@ -788,6 +798,8 @@ const RAW_QUESTIONS = [
   {topic:"health", q:"下列何者不屬職場健康促進主要推行工作範圍？", opts:["疾病治療","友善職場","健康生活","舒適環境"], a:0},
   {topic:"health", q:"對於發生中暑之勞工最優先的急救方法為下列何者？", opts:["儘快有效降溫","原地休息","等待就醫","減輕工作"], a:0},
   {topic:"health", q:"從事致癌性物質（如苯、石綿、氯乙烯）作業勞工之特殊健康檢查紀錄應保存多少年？", opts:["10年","20年","30年","永久"], a:2},
+  {topic:"health", q:"腕道症候群常發生於下列何種作業？", opts:["電腦鍵盤作業","潛水作業","堆高機作業","壓力容器作業"], a:0},
+  {topic:"health", q:"依職業安全衛生設施規則規定，雇主為預防勞工因他人行為遭受身體或精神不法侵害(職場暴力)，應採取預防措施，執行紀錄留存幾年？", opts:["1年","3年","5年","20年"], a:1},
 
   // 17. stat (職災調查與統計)
   {topic:"stat", q:"依勞動檢查法施行細則規定，下列何者係指每百萬工時之失能傷害總損失日數？", opts:["傷害頻率 (FR)","職業災害嚴重率 (SR)","失能傷害千人率","事故率"], a:1},
@@ -801,7 +813,15 @@ const RAW_QUESTIONS = [
   {topic:"stat", q:"某公司因管線破裂造成氣體外洩事故，管線腐蝕屬下列何者原因？", opts:["直接原因","長期原因","基本原因","間接原因"], a:3},
   {topic:"stat", q:"依職業安全衛生法規定，事業單位發生罹災人數在3人以上之職業災害時，雇主應於多少小時內報告檢查機構？", opts:["6小時","8小時","12小時","24小時"], a:1},
   {topic:"stat", q:"4月28日為下列何種紀念日？", opts:["工殤日 (國際工殤紀念日)","和平紀念日","國際勞工節","全國減碳日"], a:0},
-  {topic:"stat", q:"下列何者屬於永久部分失能？", opts:["雙目失明","一隻眼及一隻手臂失去機能","一隻眼及一隻腿失去機能","損失一隻手"], a:3}
+  {topic:"stat", q:"下列何者屬於永久部分失能？", opts:["雙目失明","一隻眼及一隻手臂失去機能","一隻眼及一隻腿失去機能","損失一隻手"], a:3},
+  {topic:"stat", q:"某工廠三月份發生勞工死亡及永久全失能各1人之災害，則該月份之總損失日數為下列何者？", opts:["6,000日","12,000日","6,000日加診療日","12,000日加診療日"], a:1},
+
+  // ===== 115年新修法規預測考題 =====
+  {topic:"stat", q:"【115年新修法規】依新修訂之職業安全衛生法施行細則，勞工人數在多少人以上之事業，雇主應按月填載職業災害統計，報請勞動檢查機構備查？", opts:["10人","30人","50人","100人"], a:1, note:"配合修法，職災統計通報門檻已由50人下修至30人以上之事業。"},
+  {topic:"contract", q:"【115年新修法規】依新修訂之法規，事業單位將營繕工程交付二個以上施工者施工時，應如何處理整體工程施工風險評估？", opts:["由各施工者自行辦理各自的風險評估","由原事業單位親自實施整體評估","指定施工者之一實施整體工程施工風險評估及採取統合管理","委託外部顧問機構辦理"], a:2, note:"職安管理辦法第12條之5新增，交付二個以上施工者施工時，應指定施工者之一實施整體評估與統合管理。"},
+  {topic:"contract", q:"【115年新修法規】依新修訂之法規，事業單位與承攬人共同作業時，所設置之協議組織，其協議事項新增了下列哪一項？", opts:["承攬人勞工之薪資發放標準","於高、低氣溫或其他不利氣候條件作業所衍生風險之預防措施","事業單位之營業利潤分配","承攬人內部之人事升遷規定"], a:1, note:"職安法施行細則第38條新增，因應氣候變遷，將高低氣溫等不利氣候條件之預防納入協議事項。"},
+  {topic:"emergency", q:"【115年新修法規】依新修訂之職業安全衛生法施行細則，發生職業災害時，雇主應採取的必要急救、搶救措施，「新增」了下列何項具體作為？", opts:["立即聯絡保險公司理賠","進行人員清點及管制現場，禁止其他工作者進入","召開記者會說明","扣留肇事勞工薪資"], a:1, note:"職安法施行細則第46條之1新增，雇主應進行人員清點及管制現場，並提供緊急應變人員必要防護具及撤離機制。"},
+  {topic:"collapse", q:"【115年新修法規】依新修訂之職業安全衛生管理辦法，雇主對營造工程之「模板支撐架」，除了每週、惡劣氣候後、復工前應實施檢查外，還新增了哪個必須檢查的時機？", opts:["鋼筋綁紮完成後","混凝土澆置作業前","模板拆除後","基礎開挖前"], a:1, note:"管理辦法第44條新增，考量模板倒塌多發生於灌漿階段，明定「混凝土澆置作業前」亦應實施檢查。"}
 ];
 
 const QUESTIONS = RAW_QUESTIONS;
@@ -818,8 +838,8 @@ QUESTIONS.forEach(item=>{ QUESTIONS_BY_ID[item.id] = item; });
 /* =========================================================
    LOCAL STORAGE & STATE
 ========================================================= */
-const BANK_KEY = "osh_wrong_bank_v1";
-const STATS_KEY = "osh_stats_v1";
+const BANK_KEY = "osh_wrong_bank_v2";
+const STATS_KEY = "osh_stats_v2";
 const MASTERY_STREAK = 2;
 
 function loadBank(){
@@ -899,6 +919,14 @@ function openModal(title, text, onConfirm) {
   document.getElementById("modalTitle").textContent = title;
   document.getElementById("modalText").textContent = text;
   modalConfirmCallback = onConfirm;
+  
+  const cancelBtn = document.getElementById("modalCancelBtn");
+  if(onConfirm) {
+    cancelBtn.style.display = "inline-block";
+  } else {
+    cancelBtn.style.display = "none";
+  }
+  
   document.getElementById("customModal").style.display = "flex";
 }
 function closeModal() {
@@ -924,7 +952,8 @@ const GUIDE = {
       "個人資料保護法：<span class='kw'>20人以上</span>當事人可提出團體訴訟。",
       "營業秘密三要件：秘密性、經濟價值、合理保密措施；故意侵權最高得酌定<span class='kw'>3倍損害額</span>賠償。",
       "專利權年限：發明專利為<span class='kw'>20年</span>；商標權註冊採屬地保護原則。",
-      "公務員廉政倫理：偶發收受非主動求取之廣告物、促銷品等，價值在<span class='kw'>新臺幣500元以下</span>。"
+      "公務員廉政倫理：偶發收受非主動求取之廣告物、促銷品等，價值在<span class='kw'>新臺幣500元以下</span>。",
+      "性騷擾防治：乘人不及抗拒而為親吻、擁抱或觸摸其隱私處之行為者，處<span class='kw'>2年以下</span>有期徒刑。"
     ]
   },
   law: {
@@ -937,8 +966,9 @@ const GUIDE = {
       "特高壓定義：超過<span class='kw'>22,800伏特</span>之電壓；高低壓分界為600伏特。",
       "新僱勞工一般安全衛生教育訓練：不得少於<span class='kw'>3小時</span>；電焊作業等特殊危害增列1小時。",
       "業務主管在職教育訓練：每<span class='kw'>2年至少6小時</span>；專職職安人員(管理員/師)每2年至少12小時。",
-      "事業單位勞工人數達<span class='kw'>100人以上</span>者，應設專責一級管理單位並訂定職業安全衛生管理規章。",
-      "勞動基準法職災補償：死亡給予<span class='kw'>40個月平均工資</span>死亡補償與5個月喪葬費；女工產假為<span class='kw'>8星期</span>。"
+      "勞動基準法職災補償：死亡給予<span class='kw'>40個月平均工資</span>死亡補償與5個月喪葬費；女工產假為<span class='kw'>8星期</span>。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>保護對象擴及「工作者」（含平台外送員等）；職安衛委員會任務增列「現場安全衛生管理績效考核」。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>安全衛生工作守則內容新增「機械、設備或器具之操作規範與作業程序」與「個人防護具之維護及使用」。"
     ]
   },
   intro: {
@@ -946,7 +976,7 @@ const GUIDE = {
     points:[
       "5S：<span class='kw'>整理、整頓、清掃、清潔、教養</span>（無「整合」）。",
       "危害五大類：<span class='kw'>化學性、物理性、生物性、人因性、心理性</span>。",
-      "危害控制優先順序：<span class='kw'>消除 → 取代 → 工程控制 → 隔離 → 行政管理 → 個人防護具</span>。",
+      "危害控制優先順序：<span class='kw'>消除 → 取代 → 工程控制 → 管理控制 → 個人防護具</span>。",
       "韓立奇（H.W. Heinrich）事故理論：重傷:輕傷:虛驚事故 = <span class='kw'>1:29:300</span>。",
       "零災害運動三大原則：<span class='kw'>先知先制、以零為目標、全員參加</span>（不含要求完美）。"
     ]
@@ -965,8 +995,9 @@ const GUIDE = {
     points:[
       "基本公式：<span class='kw'>風險 = 危害（嚴重度）× 暴露（可能性）</span>。",
       "評估流程：<b>危害辨識 → 風險評估 → 風險控制決策 → 控制實施</b>。",
-      "常見評估方法縮寫：<span class='kw'>PHA</span>初步危害分析、<span class='kw'>HazOp</span>危害及可操作性分析、<span class='kw'>FMEA</span>失誤模式與影響分析、<span class='kw'>FTA</span>故障樹分析。",
-      "風險控制措施優先順序：<span class='kw'>消除 → 取代 → 工程控制 → 管理控制 → 個人防護具</span>。"
+      "常見評估方法縮寫：<span class='kw'>PHA</span>初步危害分析、<span class='kw'>HazOp</span>危害及可操作性分析、<span class='kw'>FMEA</span>失誤模式與影響分析、<span class='kw'>FTA</span>故障樹分析（演繹法推導）。",
+      "風險控制措施優先順序：<span class='kw'>消除 → 取代 → 工程控制 → 管理控制 → 個人防護具</span>。",
+      "工作安全分析(JSA)的分析者：一般由<span class='kw'>具實務工作經驗之領班</span>擔任最適合。"
     ]
   },
   contract: {
@@ -975,7 +1006,9 @@ const GUIDE = {
       "二以上事業單位<b>共同出資承攬</b>時：應互推<span class='kw'>一人為代表人</span>負雇主防止職災責任。",
       "原事業單位與承攬人、再承攬人<b>共同作業</b>時：應由原事業單位<span class='kw'>指定一人</span>擔任指揮協調工作。",
       "危害告知應以<span class='kw'>書面或召開協商會議並作成紀錄</span>，不得僅口頭告知。",
-      "多承攬人勞工人數計算：以原事業單位、承攬人、再承攬人<span class='kw'>同一期間、同一工作場所</span>作業時之<b>總人數</b>計算。"
+      "多承攬人勞工人數計算：以原事業單位、承攬人、再承攬人<span class='kw'>同一期間、同一工作場所</span>作業時之<b>總人數</b>計算。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>交付二個以上施工者，應<span class='kw'>指定其中之一</span>實施整體工程施工風險評估與統合管理。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>協議組織協議事項新增納入「<span class='kw'>高低氣溫或其他不利氣候條件</span>」所衍生風險之預防措施。"
     ]
   },
   procure: {
@@ -994,7 +1027,8 @@ const GUIDE = {
       "CPR 按壓與人工呼吸比：<span class='kw'>30:2</span>，按壓深度 5 公分，速率每分鐘 100~120 次。",
       "感電急救最優先：<span class='kw'>先設法切斷電源</span>，再施救。",
       "急救人員設置：每班至少1人，勞工超過50人者，<span class='kw'>每增加50人再增設1人</span>。",
-      "氧乙炔關機順序：<span class='kw'>先關乙炔，再關氧氣</span>。"
+      "氧乙炔關機順序：<span class='kw'>先關乙炔，再關氧氣</span>。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>發生職災時，急救搶救措施新增：「使有立即危險之工作者退避」、「<span class='kw'>進行人員清點及現場管制</span>」及提供緊急應變人員防護與撤離機制。"
     ]
   },
   fall: {
@@ -1002,6 +1036,7 @@ const GUIDE = {
     points:[
       "高度<span class='kw'>2公尺以上</span>之作業場所有墜落之虞，應設<b>護欄、護蓋、安全網</b>等設備。",
       "高度<span class='kw'>2公尺以上未滿5公尺</span>之高處作業<b>不可</b>用合梯作為上下設備。",
+      "護欄的上欄杆高度應在<span class='kw'>90公分以上</span>。",
       "合梯使用：梯角與地面應<span class='kw'>75度</span>以內；單人使用禁止登上最後一層頂板；5公尺以上不得作為高處作業設備。",
       "固定梯長度連續超過6公尺：距梯底2公尺以上部分應設<b>護籠</b>；每隔9公尺以下設一平台；頂端突出板面<span class='kw'>60公分以上</span>。",
       "安全帶繫固錨錠：每人應能承受<span class='kw'>2,300公斤以上</span>拉力。"
@@ -1014,7 +1049,8 @@ const GUIDE = {
       "固定式起重機安全裝置：過捲預防、過負荷警報、防脫落裝置——<b>無「過熱預防裝置」</b>。",
       "木材加工用圓盤鋸：應設鋸齒接觸預防裝置、反撥預防裝置及厚度為鋸片<span class='kw'>1.1倍以上</span>之撐縫片。",
       "吊掛鋼索報廢標準：一撚間素線截斷達<span class='kw'>10%以上</span>、直徑減少達公稱直徑<span class='kw'>7%以上</span>。",
-      "動力堆高機之載物架：<b>嚴禁載人</b>。"
+      "動力堆高機之載物架：<b>嚴禁載人</b>。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>移動式起重機每年定期檢查新增「<span class='kw'>迴轉裝置之位移及扭力值</span>」量測；新增「協同作業機器人」每日作業前應實施檢點。"
     ]
   },
   fire: {
@@ -1041,7 +1077,8 @@ const GUIDE = {
     points:[
       "石綿板、鐵皮、塑膠屋頂作業防踏穿：屋架上設踏板寬度<span class='kw'>≥30公分</span>。",
       "露天開挖垂直深度超過<span class='kw'>1.5公尺</span>，即應設擋土支撐。",
-      "裝卸貨物高差<span class='kw'>≥1.5公尺</span>應設安全上下設備。"
+      "裝卸貨物高差<span class='kw'>≥1.5公尺</span>應設安全上下設備。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>模板支撐架除原有檢查時機外，新增「<span class='kw'>混凝土澆置作業前</span>」亦應實施檢查。"
     ]
   },
   chem: {
@@ -1059,7 +1096,8 @@ const GUIDE = {
       "噪音管制：<span class='kw'>85分貝</span>提供防音具、<span class='kw'>90分貝</span>需工程控制並公告；每增加 5 分貝容許暴露時間減半（95dB 4h, 100dB 2h, 115dB 上限）。",
       "人耳聽力頻率範圍：約<span class='kw'>20Hz ~ 20,000Hz</span>（聽力損失通常先發生於 <span class='kw'>4,000Hz</span>）。",
       "兩相同音源併置：音壓級約<b>增加3分貝</b>（如 90dB + 90dB = 93dB）。",
-      "游離輻射屏蔽效果：<span class='kw'>鉛</span>最佳；手腕隧道症候群為<b>正中神經</b>受壓迫受損。"
+      "游離輻射屏蔽效果：<span class='kw'>鉛</span>最佳；手腕隧道症候群為<b>正中神經</b>受壓迫受損。",
+      "WBGT(戶外有日曬) = <span class='kw'>0.7自然濕球 + 0.2黑球 + 0.1乾球溫度</span>。"
     ]
   },
   health: {
@@ -1078,7 +1116,8 @@ const GUIDE = {
       "失能傷害嚴重率 SR = <span class='kw'>總損失日數 × 1,000,000 ÷ 總經歷工時</span>（計至整數）。",
       "死亡及永久全失能之法定損失日數：<span class='kw'>6,000日</span>；暫時全失能為損失工作日<span class='kw'>1日以上</span>。",
       "直接原因（能量/危害物）→ 間接原因（不安全行為/狀況）→ 基本原因（管理缺陷）。",
-      "4月28日為<span class='kw'>國際工殤日</span>。"
+      "4月28日為<span class='kw'>國際工殤日</span>。",
+      "<span style='color:var(--danger);font-weight:bold;'>【115年新修法規】</span>應按月填載職業災害統計並報請勞動檢查機構備查的事業單位門檻，由50人下修至<span class='kw'>30人以上</span>之事業。"
     ]
   }
 };
@@ -1155,23 +1194,51 @@ function renderStatsChart() {
     fairyMsg.style.display = "flex";
 
     const latestScore = stats[stats.length - 1].score;
+    const prevScore = stats.length > 1 ? stats[stats.length - 2].score : latestScore;
+    const diff = latestScore - prevScore;
+    
     let msg = "";
     let bgColor = "#f0fdf4"; let borderColor = "#22c55e"; let textColor = "#15803d";
 
-    if(latestScore >= 95) {
-        msg = "牛逼太神啦！準備好躺著過關了嗎？✨";
-    } else if (latestScore >= 80) {
-        msg = "有進步很多！繼續保持這個氣勢喔！🔥";
-    } else if (latestScore >= 60) {
-        msg = "繼續加油喔！已經及格了，再稍微複習一下會更穩！📚";
-        bgColor = "#fffbeb"; borderColor = "#f59e0b"; textColor = "#b45309";
-    } else if (latestScore >= 40) {
-        msg = "請再接再厲！距離及格不遠了，錯題本是你的好朋友！💪";
-        bgColor = "#fef2f2"; borderColor = "#ef4444"; textColor = "#b91c1c";
+    const encouragements = [
+      "牛逼太神啦！這分數根本可以閉著眼睛考了吧？✨",
+      "哇賽！你是不是偷看了小抄？這進步幅度太誇張啦！🔥",
+      "有神快拜！這種成績上考場絕對是輾壓全場的啦！🏆",
+      "這分數也太水了吧！你是不是連吃飯都在看書啊？💯",
+      "太猛了！我都想叫你一聲師傅了，請收下我的膝蓋！🙇‍♀️"
+    ];
+
+    const roasts = [
+      "哎呀，怎麼退步了？是不是昨晚熬夜打電動沒讀書啊？🎮",
+      "這分數... 只能說，你還有很大的『進步空間』呢！📉",
+      "等等，你確定你有認真在做題目嗎？錯題本都在哭了！😭",
+      "這成績... 我看你還是乖乖回去重看複習講義吧，別想偷懶！📚",
+      "你的大腦是不是還在放假啊？快點醒醒，這分數上考場會變砲灰的！💣"
+    ];
+
+    const normals = [
+      "表現平穩！繼續保持，把不會的題目都弄懂就沒問題了！👍",
+      "穩扎穩打才是王道，繼續練習，熟能生巧！💪",
+      "看來你已經抓到考試的訣竅了，再稍微加強一下就完美了！🎯",
+      "成績有維持住喔！這也是一種實力的展現，繼續加油！🌟",
+      "不錯不錯，只要每天進步一點點，及格絕對不是夢！✨"
+    ];
+
+
+    if (diff > 0 || latestScore >= 90) {
+       msg = encouragements[Math.floor(Math.random() * encouragements.length)];
+    } else if (diff < 0) {
+       msg = roasts[Math.floor(Math.random() * roasts.length)];
+       bgColor = "#fef2f2"; borderColor = "#ef4444"; textColor = "#b91c1c";
     } else {
-        msg = "多讀書好嗎！這樣上考場會變砲灰啦，快去複習講義！💢";
-        bgColor = "#fef2f2"; borderColor = "#ef4444"; textColor = "#b91c1c";
+       if (latestScore >= 60) {
+           msg = normals[Math.floor(Math.random() * normals.length)];
+       } else {
+           msg = "雖然沒有退步，但這分數還是有點危險啊！快去擁抱你的錯題本吧！🆘";
+           bgColor = "#fffbeb"; borderColor = "#f59e0b"; textColor = "#b45309";
+       }
     }
+
 
     fairyMsg.style.background = bgColor;
     fairyMsg.style.borderColor = borderColor;
@@ -1248,7 +1315,10 @@ let timerInterval = null;
 let timeLeft = 0;
 
 function startQuiz(pool, opts={}){
-  if(pool.length === 0){ alert("沒有題目可以練習！"); return; }
+  if(pool.length === 0){ 
+      openModal("提示", "沒有符合條件的題目可以練習！請重新選擇主題。", null);
+      return; 
+  }
   
   pool = pool.slice().sort(()=>Math.random()-0.5);
   const n = opts.limit ? Math.min(opts.limit, pool.length) : pool.length;
@@ -1278,7 +1348,10 @@ function startQuiz(pool, opts={}){
 document.getElementById("startBtn").addEventListener("click", ()=>{
   const selectedTopics = Array.from(topicGrid.querySelectorAll("input:checked")).map(cb=>cb.value);
   const pool = QUESTIONS.filter(q=>selectedTopics.includes(q.topic));
-  if(pool.length === 0){ alert("請至少選擇一個主題！"); return; }
+  if(pool.length === 0){ 
+      openModal("提示", "請至少選擇一個主題！", null);
+      return; 
+  }
   startQuiz(pool, {limit: parseInt(qCountSlider.value,10), reviewMode:false});
 });
 
